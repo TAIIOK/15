@@ -1,22 +1,12 @@
 package barley_break;
 
 
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Point;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
-import javax.swing.Box;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 
 
 public class GamePanel extends JFrame {
@@ -51,6 +41,7 @@ public class GamePanel extends JFrame {
         // Игровое поле
         mainBox.add(Box.createVerticalStrut(10));
         fieldPanel.setDoubleBuffered(true);
+        _model.start();
         createField();
         setEnabledField(false);
         mainBox.add(fieldPanel);
@@ -73,7 +64,7 @@ public class GamePanel extends JFrame {
         fieldPanel.setPreferredSize(fieldDimension);
         fieldPanel.setMinimumSize(fieldDimension);
         fieldPanel.setMaximumSize(fieldDimension);
-        _model.start();
+
         repaintField();
     }
     
@@ -91,13 +82,21 @@ public class GamePanel extends JFrame {
                 Cell temp = getCell(cells , col , row);
 
                 if(temp != null) {
-                    JButton button = new JButton();
 
-                    button.setText(temp.label().getNumber());
+                    try {
+                        Image img = ImageIO.read(getClass().getResource("img/simple.png"));
+                        Image newimg = img.getScaledInstance(60, 55,  Image.SCALE_SMOOTH);
+                        JButton button = new JButton(temp.label().getNumber(),new ImageIcon( newimg ));
+                        button.setFocusable(false);
+                        button.setHorizontalTextPosition(SwingConstants.CENTER);
 
-                    button.setFocusable(false);
-                    fieldPanel.add(button);
-                    button.addActionListener(new ClickListener());
+                        fieldPanel.add(button);
+                        button.addActionListener(new ClickListener());
+                    } catch (Exception ex) {
+                        System.out.println(ex);
+                    }
+
+
                 }
 
             }
@@ -191,12 +190,38 @@ public class GamePanel extends JFrame {
             }
             if ("new".equals(command)) {
                 _model.start();
+                _model.shuffleField();
                 createField();
+
             }  
         }
     }
     
 // ------------------------- Реагируем на действия игрока ----------------------
+
+    private boolean determinateWin()
+    {
+        int start = 1;
+        for (int row = 1; row <= _model.field().height(); row++) {
+
+            for (int col = 1; col <= _model.field().width(); col++) {
+                Point position = new Point(col,row);
+                String number = _model.field().cell(position).label().getNumber();
+                if(number.isEmpty())
+                {
+                    if(col != 4 & row != 4)
+                    return false;
+                }
+                else if(start != Integer.parseInt(number)) {
+                    return false;
+                }
+                start++;
+
+            }
+        }
+
+        return true;
+    }
 
     private class ClickListener implements ActionListener {
         @Override
@@ -208,9 +233,15 @@ public class GamePanel extends JFrame {
             // Ставим на поле метку текущего игрока
             Point p = buttonPosition(button);
 
+
             if(_model.field().move(p))
             {
                 repaintField();
+                if(determinateWin())
+                {
+                    JOptionPane.showMessageDialog(null, "Вы выиграли", "Победа!", JOptionPane.PLAIN_MESSAGE);
+                    setEnabledField(false);
+                }
             }
 
           //  _model.activePlayer().setLabelTo(p);

@@ -55,6 +55,11 @@ public class GameModel {
                 count++;
             }
         }
+
+    }
+
+    public void shuffleField()
+    {
         field().MixArray();
     }
 
