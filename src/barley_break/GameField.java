@@ -45,14 +45,28 @@ public class GameField {
     public boolean move(Point p)
     {
         Cell current = cell(p);
-        Cell emptyCell = new Cell();
+        Cell emptyCell ;
         for (Cell item : this.cellList) {
             if (item.label().getNumber() == "") {
                 emptyCell = item;
-            }
-        }
 
 
+                if(current instanceof StickyCell)
+                {
+                    Point point = new Point();
+                    point.x = (int)current.position().getX()-1;
+                    point.y = (int)current.position().getY();
+
+                    Cell pair = cell(point);
+                    if(pair == null) {
+                        if (pair instanceof SimpleCell) {
+                            ((StickyCell) current).setMoved(false);
+                            return false;
+                        }
+                    }
+                    
+                    ((StickyCell) current).setMoved(true);
+                }
         if(isLegalPlay(current.position().getX(),current.position().getY(),emptyCell.position().getX(),emptyCell.position().getY()))
         {
 
@@ -69,11 +83,17 @@ public class GameField {
         else
             return false;
 
+
+            }
+        }
+        return  false;
+
     }
 
 
     private boolean isLegalPlay(double x_1, double y_1 , double x_2, double y_2 )
     {
+
 
             if(y_1>y_2)
             {

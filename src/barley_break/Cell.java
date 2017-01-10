@@ -5,9 +5,14 @@ import java.awt.Point;
 /*
  * Ячейка, являющаяся составной частью поля и содержащая в себе метку
  */
-public class Cell {
+abstract  public class Cell {
     
 // --------------------- Позиция метки -----------------------
+
+    protected String image;
+
+    protected boolean CanBeMoved;
+
     //Позиция
     private Point position;
     
@@ -37,11 +42,6 @@ public class Cell {
     public void setLabel(Label l) {
         l.setCell(this);
         this.label = l;
-    }
-
-    public void move()
-    {
-
     }
 
 }

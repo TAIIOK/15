@@ -35,7 +35,6 @@ public class GameModel {
 
 // ---------------------- Порождение обстановки на поле ---------------------
 
-    private CellFactory _cellFactory = new CellFactory();
 
     private void generateField() {
 
@@ -45,12 +44,15 @@ public class GameModel {
         int count = 1;
         for (int row = 1; row <= field().height(); row++) {
             for (int col = 1; col <= field().width(); col++) {
-                if(count < 16) {
-                    field().setCell(new Point(col, row), _cellFactory.createCell(), String.valueOf(count));
+                if(count == 1) {
+                    field().setCell(new Point(col, row), new StickyCell(), String.valueOf(count));
+                }
+                else if(count < 16) {
+                    field().setCell(new Point(col, row), new SimpleCell() , String.valueOf(count));
 
                 }
                 else{
-                    field().setCell(new Point(col, row), _cellFactory.createCell(),"");
+                    field().setCell(new Point(col, row),  new BrokenCell(),"");
                 }
                 count++;
             }

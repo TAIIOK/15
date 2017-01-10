@@ -84,10 +84,15 @@ public class GamePanel extends JFrame {
                 if(temp != null) {
 
                     try {
-                        Image img = ImageIO.read(getClass().getResource("img/simple.png"));
+                        Image img = ImageIO.read(getClass().getResource(temp.image));
                         Image newimg = img.getScaledInstance(60, 55,  Image.SCALE_SMOOTH);
                         JButton button = new JButton(temp.label().getNumber(),new ImageIcon( newimg ));
                         button.setFocusable(false);
+
+                        if (temp instanceof  BrokenCell)
+                        {
+                            button.setEnabled(false);
+                        }
                         button.setHorizontalTextPosition(SwingConstants.CENTER);
 
                         fieldPanel.add(button);
