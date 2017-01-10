@@ -30,8 +30,8 @@
       <file leaf-file-name="GameField.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/barley_break/GameField.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+            <state relative-caret-position="446">
+              <caret line="159" column="16" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="56" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#4386#4387#0" expanded="true" />
@@ -84,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Label.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Label.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Cells/Label.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
@@ -117,17 +117,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/barley_break/GameModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-302">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="442">
+              <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#374#375#0" expanded="true" />
                 <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#1592#1593#0" expanded="true" />
-                <element signature="e#1626#1627#0" expanded="true" />
+                <element signature="e#1696#1697#0" expanded="true" />
+                <element signature="e#1730#1731#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,12 +194,12 @@
         <option value="$PROJECT_DIR$/src/Cells/EmptyCell.java" />
         <option value="$PROJECT_DIR$/src/Cells/BrokenCell.java" />
         <option value="$PROJECT_DIR$/src/barley_break/GameField.java" />
-        <option value="$PROJECT_DIR$/src/barley_break/GameModel.java" />
         <option value="$PROJECT_DIR$/src/barley_break/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/Cells/Cell.java" />
         <option value="$PROJECT_DIR$/src/Cells/Label.java" />
         <option value="$PROJECT_DIR$/src/Cells/SimpleCell.java" />
         <option value="$PROJECT_DIR$/src/Cells/StickyCell.java" />
+        <option value="$PROJECT_DIR$/src/barley_break/GameModel.java" />
       </list>
     </option>
   </component>
@@ -796,16 +796,16 @@
       <option name="presentableId" value="Default" />
       <updated>1483987632894</updated>
       <workItem from="1483987634101" duration="7074000" />
-      <workItem from="1484041494378" duration="23228000" />
+      <workItem from="1484041494378" duration="23779000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30302000" />
+    <option name="totallyTimeSpent" value="30853000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -819,7 +819,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.240625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.240625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -886,8 +886,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#374#375#0" expanded="true" />
             <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1626#1627#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+            <element signature="e#1730#1731#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1061,44 +1061,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/barley_break/GameField.java">
+    <entry file="file://$PROJECT_DIR$/src/Cells/SimpleCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4386#4387#0" expanded="true" />
-            <element signature="e#4418#4419#0" expanded="true" />
-            <element signature="e#4776#4777#0" expanded="true" />
-            <element signature="e#4805#4806#0" expanded="true" />
-            <element signature="e#4832#4833#0" expanded="true" />
-            <element signature="e#4862#4863#0" expanded="true" />
-            <element signature="e#4977#4978#0" expanded="true" />
-            <element signature="e#5006#5007#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/barley_break/GameModel.java">
+    <entry file="file://$PROJECT_DIR$/src/Cells/StickyCell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#1592#1593#0" expanded="true" />
-            <element signature="e#1626#1627#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/barley_break/GamePanel.java">
+    <entry file="file://$PROJECT_DIR$/src/Cells/Label.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4590">
-          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#340#341#0" expanded="true" />
+            <element signature="e#362#363#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1126,29 +1111,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cells/SimpleCell.java">
+    <entry file="file://$PROJECT_DIR$/src/barley_break/GameField.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cells/StickyCell.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Cells/Label.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+        <state relative-caret-position="446">
+          <caret line="159" column="16" selection-start-line="159" selection-start-column="16" selection-end-line="159" selection-end-column="56" />
           <folding>
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#362#363#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#4386#4387#0" expanded="true" />
+            <element signature="e#4418#4419#0" expanded="true" />
+            <element signature="e#4776#4777#0" expanded="true" />
+            <element signature="e#4805#4806#0" expanded="true" />
+            <element signature="e#4832#4833#0" expanded="true" />
+            <element signature="e#4862#4863#0" expanded="true" />
+            <element signature="e#4977#4978#0" expanded="true" />
+            <element signature="e#5006#5007#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/barley_break/GamePanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4590">
+          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/barley_break/GameModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="47" column="39" selection-start-line="47" selection-start-column="39" selection-end-line="47" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+            <element signature="e#1730#1731#0" expanded="true" />
           </folding>
         </state>
       </provider>
