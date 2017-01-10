@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import Cells.*;
 
+import javax.swing.*;
+
 /**
  *  Прямоугольное поле, состоящее из ячеек
  */
@@ -74,6 +76,7 @@ public class GameField {
 
                         if (pair instanceof SimpleCell) {
                             ((StickyCell) current).setMoved(false);
+                            JOptionPane.showMessageDialog(null, "Костяшка прилипла и не может быть передвинута ! ", "Упс", JOptionPane.PLAIN_MESSAGE);
                             return false;
                         }
 
