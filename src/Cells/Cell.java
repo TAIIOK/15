@@ -3,12 +3,10 @@ package Cells;
 import java.awt.Point;
 import javax.swing.*;
 import java.awt.*;
-/*
- * Ячейка, являющаяся составной частью поля и содержащая в себе метку
- */
+
 abstract  public class Cell {
     
-// --------------------- Позиция метки -----------------------
+
 
     protected String image;
 

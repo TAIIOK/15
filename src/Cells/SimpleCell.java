@@ -9,8 +9,7 @@ public class SimpleCell extends Cell {
         CanBeMoved = true;
     }
 
-    // --------------------- Метка, принадлежащая ячейке -----------------------
-    //Метка
+
     private Label label;
 
 

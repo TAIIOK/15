@@ -3,8 +3,7 @@ package Cells;
 
 public class Label {
     
-    
-// --------------- Ячейка, которой прнадлежит метка. Задает сама ячейка -------
+
     private Cell cell;
 
     private String number;

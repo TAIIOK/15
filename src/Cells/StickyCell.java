@@ -10,8 +10,6 @@ public class StickyCell  extends Cell  {
 
     }
 
-    // --------------------- Метка, принадлежащая ячейке -----------------------
-    //Метка
     private Label label;
 
 

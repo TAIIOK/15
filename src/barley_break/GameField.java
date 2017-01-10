@@ -11,11 +11,8 @@ import Cells.*;
  */
 public class GameField {
     
-// ----------------- Контейнер ячеек, а в конечном счете, и меток ---------------
-// Позиции ячеек и меток  задаются строками и столбцами в диапазоне [1, height] и
-// [1, width] соответсвенно
-    
-// ------------------------------ Ячейки ---------------------------------------    
+
+
     //Список ячеек
     private List<Cell> cellList = new ArrayList();
     
@@ -219,11 +216,7 @@ public class GameField {
         return _height;
     }
     
-    public boolean containsRange(Point p){
-        return p.getX() >= 1 && p.getX() <= _width &&
-               p.getY() >= 1 && p.getY() <= _height ;
-    }
-    
+
 // ----------------------------------------------------------------------------    
     public GameField() {
         setSize(4, 4);

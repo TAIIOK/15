@@ -268,8 +268,7 @@ public class GamePanel extends JFrame {
            
             JButton button = (JButton) e.getSource();
 
-            
-            // Ставим на поле метку текущего игрока
+
             Point p = buttonPosition(button);
 
 
@@ -283,7 +282,6 @@ public class GamePanel extends JFrame {
                 }
             }
 
-          //  _model.activePlayer().setLabelTo(p);
         }
     }
     
