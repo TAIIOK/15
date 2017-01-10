@@ -155,7 +155,7 @@ public class GameField {
         List<Integer> Numbers  = new ArrayList();
 
 
-        for(int i = 0 ;Numbers.size()!=16;i++)
+        for(int i = 0 ;Numbers.size()!=14;i++)
         {
             int fistnumber;
             int secondnumber;
@@ -169,7 +169,11 @@ public class GameField {
                 Numbers.add(secondnumber);
 
             Cell first = cellList.get(fistnumber);
+
             Cell second = cellList.get(secondnumber);
+
+            if(first instanceof BrokenCell || second instanceof BrokenCell)
+                continue;
 
             Point firstCell = first.position();
 

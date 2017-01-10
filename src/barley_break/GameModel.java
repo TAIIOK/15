@@ -48,7 +48,7 @@ public class GameModel {
                 if(count == 1) {
                     field().setCell(new Point(col, row), new StickyCell(), String.valueOf(count));
                 }
-                else if (count == 2)
+                else if (count == 7)
                 {
                     field().setCell(new Point(col, row), new BrokenCell(), String.valueOf(count));
                 }
