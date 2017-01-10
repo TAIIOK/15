@@ -1,4 +1,4 @@
-package barley_break;
+package Cells;
 
 
 public class Label {
@@ -24,7 +24,7 @@ public class Label {
         return cell;
     }
     
-    void setCell(Cell c){
+    public void setCell(Cell c){
         cell=c;
     }
 

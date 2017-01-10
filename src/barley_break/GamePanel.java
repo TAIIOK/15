@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-
+import Cells.*;
 
 public class GamePanel extends JFrame {
     
@@ -84,15 +84,32 @@ public class GamePanel extends JFrame {
                 if(temp != null) {
 
                     try {
-                        Image img = ImageIO.read(getClass().getResource(temp.image));
+
+                        Image img = ImageIO.read(getClass().getResource(temp.GetImage()));
                         Image newimg = img.getScaledInstance(60, 55,  Image.SCALE_SMOOTH);
-                        JButton button = new JButton(temp.label().getNumber(),new ImageIcon( newimg ));
+                        JButton button = new JButton();
+                        if(temp instanceof  EmptyCell) {
+                             button.setIcon(new ImageIcon(newimg));
+                        }
+                        else {
+                            if(temp instanceof  SimpleCell )   {
+                                button = new JButton(((SimpleCell) temp).label().getNumber(), new ImageIcon(newimg));
+                            }
+                            if(temp instanceof  BrokenCell )   {
+                                button = new JButton(((BrokenCell) temp).label().getNumber(), new ImageIcon(newimg));
+                            }
+                            if(temp instanceof  StickyCell )   {
+                                button = new JButton(((StickyCell) temp).label().getNumber(), new ImageIcon(newimg));
+                            }
+
+                        }
                         button.setFocusable(false);
 
-                        if (temp instanceof  BrokenCell)
+                        if (temp instanceof  BrokenCell ||  temp instanceof  EmptyCell)
                         {
                             button.setEnabled(false);
                         }
+
                         button.setHorizontalTextPosition(SwingConstants.CENTER);
 
                         fieldPanel.add(button);
@@ -211,13 +228,30 @@ public class GamePanel extends JFrame {
 
             for (int col = 1; col <= _model.field().width(); col++) {
                 Point position = new Point(col,row);
-                String number = _model.field().cell(position).label().getNumber();
-                if(number.isEmpty())
+                Cell current = _model.field().cell(position);//.label().getNumber();
+                int Number = -1;
+                if(current instanceof  EmptyCell)
                 {
                     if(col != 4 & row != 4)
                     return false;
                 }
-                else if(start != Integer.parseInt(number)) {
+                else  {
+                    if (current instanceof  BrokenCell)
+                    {
+                        Number =  Integer.parseInt(((BrokenCell ) current).label().getNumber());
+                    }
+
+                    if (current instanceof  SimpleCell)
+                    {
+                        Number =  Integer.parseInt(((SimpleCell ) current).label().getNumber());
+                    }
+
+                    if (current instanceof  StickyCell)
+                    {
+                        Number =  Integer.parseInt(((StickyCell ) current).label().getNumber());
+                    }
+
+                    if(start != Number )
                     return false;
                 }
                 start++;

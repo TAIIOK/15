@@ -1,7 +1,8 @@
-package barley_break;
+package Cells;
 
 import java.awt.Point;
-
+import javax.swing.*;
+import java.awt.*;
 /*
  * Ячейка, являющаяся составной частью поля и содержащая в себе метку
  */
@@ -17,31 +18,17 @@ abstract  public class Cell {
     private Point position;
     
     
-    void setPosition(Point pos) {
+    public void setPosition(Point pos) {
         this.position=pos;
     }
 
     public Point position() {
         return position;
     }
-    
-// --------------------- Метка, принадлежащая ячейке -----------------------
-    //Метка
-    private Label label;
-    
-    
-    public Label label() {
-        return label;
-    }
-    
-    public boolean isEmpty()
+
+    public String GetImage()
     {
-        return label == null;
-    }
-    
-    public void setLabel(Label l) {
-        l.setCell(this);
-        this.label = l;
+        return this.image;
     }
 
 }

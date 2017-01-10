@@ -8,6 +8,7 @@ import java.util.Random;
 import javax.swing.*;
 import java.util.*;
 
+import Cells.*;
 /**
 /* Aбстракция всей игры; генерирует стартовую обстановку; поочередно передает 
 * ход игрокам, задавая им метку для установки на поле; следит за игроками с 
@@ -47,12 +48,16 @@ public class GameModel {
                 if(count == 1) {
                     field().setCell(new Point(col, row), new StickyCell(), String.valueOf(count));
                 }
+                else if (count == 2)
+                {
+                    field().setCell(new Point(col, row), new BrokenCell(), String.valueOf(count));
+                }
                 else if(count < 16) {
                     field().setCell(new Point(col, row), new SimpleCell() , String.valueOf(count));
 
                 }
                 else{
-                    field().setCell(new Point(col, row),  new BrokenCell(),"");
+                    field().setCell(new Point(col, row),  new EmptyCell(),"");
                 }
                 count++;
             }

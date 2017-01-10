@@ -4,7 +4,7 @@ import java.util.List;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
-
+import Cells.*;
 
 /**
  *  Прямоугольное поле, состоящее из ячеек
@@ -36,7 +36,24 @@ public class GameField {
         l.setCell(cell);
         l.setNumber(number);
 
-        cell.setLabel(l);
+        if(cell instanceof  EmptyCell){}
+
+        else if(cell instanceof  BrokenCell)
+        {
+            ((BrokenCell) cell).setLabel(l);
+        }
+
+        else if(cell instanceof  SimpleCell)
+        {
+            ((SimpleCell) cell).setLabel(l);
+        }
+
+        else if(cell instanceof  StickyCell)
+        {
+            ((StickyCell) cell).setLabel(l);
+        }
+
+
 
         cellList.add(cell);
 
@@ -47,9 +64,8 @@ public class GameField {
         Cell current = cell(p);
         Cell emptyCell ;
         for (Cell item : this.cellList) {
-            if (item.label().getNumber() == "") {
+            if (item instanceof EmptyCell) {
                 emptyCell = item;
-
 
                 if(current instanceof StickyCell)
                 {
@@ -58,13 +74,13 @@ public class GameField {
                     point.y = (int)current.position().getY();
 
                     Cell pair = cell(point);
-                    if(pair == null) {
+
                         if (pair instanceof SimpleCell) {
                             ((StickyCell) current).setMoved(false);
                             return false;
                         }
-                    }
-                    
+
+
                     ((StickyCell) current).setMoved(true);
                 }
         if(isLegalPlay(current.position().getX(),current.position().getY(),emptyCell.position().getX(),emptyCell.position().getY()))
