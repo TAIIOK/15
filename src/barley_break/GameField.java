@@ -51,6 +51,8 @@ public class GameField {
                 emptyCell = item;
             }
         }
+
+
         if(isLegalPlay(current.position().getX(),current.position().getY(),emptyCell.position().getX(),emptyCell.position().getY()))
         {
 
