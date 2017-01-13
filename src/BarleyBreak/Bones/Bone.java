@@ -1,11 +1,14 @@
 package BarleyBreak.Bones;
 
-import java.awt.Point;
-import javax.swing.*;
+import BarleyBreak.*;
 import java.awt.*;
 
-abstract  public class Bone {
-    
+abstract  public class Bone extends FieldObject<BonePosition>  {
+
+    public Bone(GameField field){
+
+        super(field);
+    }
 
 
     protected String image;
@@ -14,8 +17,7 @@ abstract  public class Bone {
 
     protected String Label;
 
-    //Позиция
-    private Point position;
+
 
     public void setLabel(String label){
         this.Label = label;
@@ -25,13 +27,8 @@ abstract  public class Bone {
         return this.Label;
     }
     
-    public void setPosition(Point pos) {
-        this.position=pos;
-    }
 
-    public Point position() {
-        return position;
-    }
+
 
     public String GetImage()
     {

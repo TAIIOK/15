@@ -3,7 +3,7 @@ package BarleyBreak;
 import java.util.List;
 import java.awt.Point;
 import java.util.ArrayList;
-import java.util.Collections;
+
 import BarleyBreak.Bones.*;
 
 import javax.swing.*;
@@ -12,12 +12,16 @@ import javax.swing.*;
  *  Прямоугольное поле, состоящее из ячеек
  */
 public class GameField {
-    
 
+    // ----------------------------------------------------------------------------
+    public GameField() {
+        setSize(4, 4);
+    }
 
     //Список костяшек
     private List<Bone> BoneList = new ArrayList();
-    
+
+
     Bone bone(Point pos){
         for (Bone item : this.BoneList) {
             if (item.position().equals(pos)) {
@@ -29,6 +33,7 @@ public class GameField {
     }
     
     void setBone(Point pos, Bone bone, String number){
+
         bone.setPosition(pos);
 
 
@@ -218,8 +223,4 @@ public class GameField {
     }
     
 
-// ----------------------------------------------------------------------------    
-    public GameField() {
-        setSize(4, 4);
-    }
 }

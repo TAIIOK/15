@@ -1,13 +1,15 @@
 package BarleyBreak.Bones;
 
 
+import BarleyBreak.GameField;
+
 public class StickyBone  extends Bone  {
 
 
-    public StickyBone()
+    public StickyBone(GameField field)
     {
+        super(field);
         image = "img/left.png";
-
     }
 
 

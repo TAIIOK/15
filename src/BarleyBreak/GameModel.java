@@ -1,12 +1,6 @@
 package BarleyBreak;
 
 import java.awt.Point;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
-import javax.swing.*;
-import java.util.*;
 
 import BarleyBreak.Bones.*;
 
@@ -68,19 +62,19 @@ public class GameModel {
     }
 
     private void generateStickyBone(int col, int row, int count){
-        field().setBone(new Point(col, row), new StickyBone(), String.valueOf(count));
+        field().setBone(new Point(col, row), new StickyBone(gameField), String.valueOf(count));
     }
     
     private void generateFixedBone(int col, int row, int count){
-        field().setBone(new Point(col, row), new FixedBone(), String.valueOf(count));
+        field().setBone(new Point(col, row), new FixedBone(gameField), String.valueOf(count));
     }
     
     private void generateSimpleBone(int col, int row, int count){
-        field().setBone(new Point(col, row), new SimpleBone(), String.valueOf(count));
+        field().setBone(new Point(col, row), new SimpleBone(gameField), String.valueOf(count));
     }
     
     private void generateEmptyBone(int col, int row){
-        field().setBone(new Point(col, row),  new EmptyBone(),"");
+        field().setBone(new Point(col, row),  new EmptyBone(gameField),"");
     }
     
     public void shuffleField()
