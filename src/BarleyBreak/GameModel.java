@@ -62,19 +62,19 @@ public class GameModel {
     }
 
     private void generateStickyBone(int col, int row, int count){
-        field().setBone(new Point(col, row), new StickyBone(gameField), String.valueOf(count));
+        field().setBone(col, row, new StickyBone(gameField), String.valueOf(count));
     }
     
     private void generateFixedBone(int col, int row, int count){
-        field().setBone(new Point(col, row), new FixedBone(gameField), String.valueOf(count));
+        field().setBone(col, row, new FixedBone(gameField), String.valueOf(count));
     }
     
     private void generateSimpleBone(int col, int row, int count){
-        field().setBone(new Point(col, row), new SimpleBone(gameField), String.valueOf(count));
+        field().setBone(col, row, new SimpleBone(gameField), String.valueOf(count));
     }
     
     private void generateEmptyBone(int col, int row){
-        field().setBone(new Point(col, row),  new EmptyBone(gameField),"");
+        field().setBone(col, row,  new EmptyBone(gameField),"");
     }
     
     public void shuffleField()

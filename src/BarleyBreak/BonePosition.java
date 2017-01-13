@@ -5,8 +5,8 @@ public class BonePosition
 {
     // -- Диапазоны возможных значений по горизонтали и вертикали для всех позиций --
 
-    private static BoneRange _horizontalRange = new BoneRange(0, 0);
-    private static BoneRange _verticalRange = new BoneRange(0, 0);
+    private static BoneRange _horizontalRange = new BoneRange(0, 15);
+    private static BoneRange _verticalRange = new BoneRange(0, 15);
 
     public static void setHorizontalRange(int min, int max){
         if(BoneRange.isValidRange(min, max))
@@ -57,6 +57,16 @@ public class BonePosition
         }
 
         return _column;
+    }
+
+    public void setRow(int row)
+    {
+        _row = row;
+    }
+
+    public void setColumn(int column)
+    {
+        _column = column;
     }
 
     // Позиция может стать невалидной, если изменились диапазоны допустимых значений
@@ -123,5 +133,14 @@ public class BonePosition
         }
 
         return false;
+    }
+
+    public  void setPosition(BonePosition position) {
+        if (position.isValid()) {
+            position.setColumn(position.column());
+            position.setRow(position.row());
+
+        }
+
     }
 }

@@ -25,9 +25,18 @@ abstract  public class Bone extends FieldObject<BonePosition>  {
 
     public String getLabel(){
         return this.Label;
+
+    }
+
+    @Override
+    public void setPosition(BonePosition position) {
+        if (position.isValid()) {
+            _position = position;
+
+        }
+
     }
     
-
 
 
     public String GetImage()

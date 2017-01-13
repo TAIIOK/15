@@ -22,7 +22,7 @@ public class GameField {
     private List<Bone> BoneList = new ArrayList();
 
 
-    Bone bone(Point pos){
+    Bone bone(BonePosition pos){
         for (Bone item : this.BoneList) {
             if (item.position().equals(pos)) {
                 return item;
@@ -32,10 +32,9 @@ public class GameField {
         return null;
     }
     
-    void setBone(Point pos, Bone bone, String number){
+    void setBone(int col , int row, Bone bone, String number){
 
-        bone.setPosition(pos);
-
+        bone.setPosition(new BonePosition(col,row));
 
 
         if(bone instanceof  EmptyBone){}
@@ -61,7 +60,7 @@ public class GameField {
 
     }
 
-    public boolean move(Point p)
+    public boolean move(BonePosition p)
     {
         Bone current = bone(p);
         Bone emptyBone ;
@@ -71,9 +70,7 @@ public class GameField {
 
                 if(current instanceof StickyBone)
                 {
-                    Point point = new Point();
-                    point.x = (int)current.position().getX()-1;
-                    point.y = (int)current.position().getY();
+                    BonePosition point = new BonePosition(current.position().row()-1,current.position().column());
 
                     Bone pair = bone(point);
 
@@ -86,17 +83,17 @@ public class GameField {
 
                     ((StickyBone) current).setMoved(true);
                 }
-        if(canBeMoved(current.position().getX(),current.position().getY(),emptyBone.position().getX(),emptyBone.position().getY()))
+        if(canBeMoved(current.position().row(),current.position().column(),emptyBone.position().row(),emptyBone.position().column()))
         {
 
-            Point emptyPosition = emptyBone.position();
+            BonePosition emptyPosition = emptyBone.position();
 
-            double Y = current.position().getY();
-            double X = current.position().getX();
+            int Y = current.position().column();
+            int X = current.position().row();
 
-            current.position().setLocation(emptyPosition);
-            emptyBone.position().x = (int)X;
-            emptyBone.position().y = (int)Y;
+            current.setPosition(emptyPosition);
+            emptyBone.setPosition(new BonePosition(X,Y));
+
             return true;
         }
         else
@@ -178,16 +175,16 @@ public class GameField {
             if(first instanceof FixedBone || second instanceof FixedBone)
                 continue;
 
-            Point firstBone = first.position();
+            BonePosition firstBone = first.position();
 
-            double Y = second.position().getY();
-            double X = second.position().getX();
+            int Y = second.position().column();
+            int X = second.position().row();
 
 
-            second.position().setLocation(firstBone);
+            second.setPosition(firstBone);
 
-            first.position().x = (int)X;
-            first.position().y = (int)Y;
+            first.setPosition(new BonePosition(Y,X));
+
 
 
         }
@@ -199,7 +196,7 @@ public class GameField {
         BoneList.clear();
     }    
     
-    private void removeBone(Point pos){
+    private void removeBone(BonePosition pos){
 
         BoneList.remove(bone(pos));
     }

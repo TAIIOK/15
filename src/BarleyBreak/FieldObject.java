@@ -1,6 +1,8 @@
 package BarleyBreak;
 
 
+
+
 public abstract class FieldObject<Position> {
 
     // -------------------------------------------------------------------------
@@ -18,9 +20,12 @@ public abstract class FieldObject<Position> {
     protected Position _position;
 
     public Position position() {
+
         return _position;
     }
 
-    abstract boolean setPosition(Position position);
+    public abstract void setPosition(Position position);
+
+
 
 }

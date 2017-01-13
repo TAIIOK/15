@@ -127,13 +127,13 @@ public class GamePanel extends JFrame {
     public Bone getBone(List<Bone> bones , double x , double y)
     {
         for (Bone item : bones) {
-            if (item.position().getX() == x &&  item.position().getY() == y) {
+            if (item.position().row() == x &&  item.position().column() == y) {
                 return item;
             }
         }
         return  null;
     }
-    private Point buttonPosition(JButton btn){
+    private BonePosition buttonPosition(JButton btn){
         
         int index = 0;
         for(Component widget: fieldPanel.getComponents())
@@ -150,7 +150,7 @@ public class GamePanel extends JFrame {
          }
         
         int fieldWidth = _model.field().width();
-        return new Point(index%fieldWidth + 1, index/fieldWidth + 1);
+        return new BonePosition(index%fieldWidth + 1, index/fieldWidth + 1);
     }
         
    private JButton getButton(Point pos) {
@@ -224,7 +224,7 @@ public class GamePanel extends JFrame {
         for (int row = 1; row <= _model.field().height(); row++) {
 
             for (int col = 1; col <= _model.field().width(); col++) {
-                Point position = new Point(col,row);
+                BonePosition position = new BonePosition(row,col);
                 Bone current = _model.field().bone(position);//.label().getNumber();
                 int Number = -1;
                 if(current instanceof  EmptyBone)
@@ -265,7 +265,7 @@ public class GamePanel extends JFrame {
            
             JButton button = (JButton) e.getSource();
 
-            Point p = buttonPosition(button);
+            BonePosition p = buttonPosition(button);
 
             if(_model.field().move(p))
             {
