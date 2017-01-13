@@ -1,8 +1,11 @@
 package BarleyBreak;
 
 import java.awt.Point;
+import java.util.ArrayList;
+import java.util.List;
 
 import BarleyBreak.Bones.*;
+import BarleyBreak.Factory.BasicBarleyBreakBoneFactory;
 
 public class GameModel {
 
@@ -30,52 +33,16 @@ public class GameModel {
 
         field().setSize(4, 4);
 
-        int[]  availableBlock = {1,4,6,7,10,11,13};
-        int[]  availableStick = {1,5,9,13};
+        List<Bone> BoneList =  _BasicBarleyBreakBoneFactory.createBones(field());
 
-        size = field().height() * field().width();
-        int count = 1;
-        int stick = (int) (Math.random() * 4);
-        int block = (int) (Math.random() * 8);
-        for (int row = 1; row <= field().height(); row++) {
-            for (int col = 1; col <= field().width(); col++) {
-                if(count == availableStick[stick]) {
-                    //field().setBone(new Point(col, row), new StickyBone(), String.valueOf(count));
-                    generateStickyBone(col, row, count);
-                }
-                else if (count == availableBlock[block])
-                {
-                    //field().setBone(new Point(col, row), new FixedBone(), String.valueOf(count));
-                    generateFixedBone(col, row, count);
-                }
-                else if(count < 16) {
-                    //field().setBone(new Point(col, row), new SimpleBone() , String.valueOf(count));
-                    generateSimpleBone(col, row, count);
-                }
-                else{
-                    generateEmptyBone(col, row);
-                }
-                count++;
-            }
-        }
+        field().setBones(BoneList);
 
     }
 
-    private void generateStickyBone(int col, int row, int count){
-        field().setBone(col, row, new StickyBone(gameField), String.valueOf(count));
-    }
-    
-    private void generateFixedBone(int col, int row, int count){
-        field().setBone(col, row, new FixedBone(gameField), String.valueOf(count));
-    }
-    
-    private void generateSimpleBone(int col, int row, int count){
-        field().setBone(col, row, new SimpleBone(gameField), String.valueOf(count));
-    }
-    
-    private void generateEmptyBone(int col, int row){
-        field().setBone(col, row,  new EmptyBone(gameField),"");
-    }
+    //Простая фабрика меток
+    private BasicBarleyBreakBoneFactory _BasicBarleyBreakBoneFactory = new BasicBarleyBreakBoneFactory();
+
+
     
     public void shuffleField()
     {

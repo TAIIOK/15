@@ -60,6 +60,12 @@ public class GameField {
 
     }
 
+    void setBones(List<Bone> List){
+        BoneList.clear();
+        BoneList = List;
+
+    }
+
     public boolean move(BonePosition p)
     {
         Bone current = bone(p);
