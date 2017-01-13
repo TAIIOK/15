@@ -31,25 +31,23 @@ public class GameField {
     void setBone(Point pos, Bone bone, String number){
         bone.setPosition(pos);
 
-        Label l = new Label();
-        l.setBone(bone);
-        l.setNumber(number);
+
 
         if(bone instanceof  EmptyBone){}
 
         else if(bone instanceof  FixedBone)
         {
-            ((FixedBone) bone).setLabel(l);
+            ((FixedBone) bone).setLabel(number);
         }
 
         else if(bone instanceof  SimpleBone)
         {
-            ((SimpleBone) bone).setLabel(l);
+            ((SimpleBone) bone).setLabel(number);
         }
 
         else if(bone instanceof  StickyBone)
         {
-            ((StickyBone) bone).setLabel(l);
+            ((StickyBone) bone).setLabel(number);
         }
 
 

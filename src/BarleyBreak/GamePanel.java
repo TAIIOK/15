@@ -90,13 +90,13 @@ public class GamePanel extends JFrame {
                         }
                         else {
                             if(temp instanceof  SimpleBone )   {
-                                button = new JButton(((SimpleBone) temp).label().getNumber(), new ImageIcon(newimg));
+                                button = new JButton(((SimpleBone) temp).getLabel(), new ImageIcon(newimg));
                             }
                             if(temp instanceof  FixedBone )   {
-                                button = new JButton(((FixedBone) temp).label().getNumber(), new ImageIcon(newimg));
+                                button = new JButton(((FixedBone) temp).getLabel(), new ImageIcon(newimg));
                             }
                             if(temp instanceof  StickyBone )   {
-                                button = new JButton(((StickyBone) temp).label().getNumber(), new ImageIcon(newimg));
+                                button = new JButton(((StickyBone) temp).getLabel(), new ImageIcon(newimg));
                             }
 
                         }
@@ -235,17 +235,17 @@ public class GamePanel extends JFrame {
                 else  {
                     if (current instanceof  FixedBone)
                     {
-                        Number =  Integer.parseInt(((FixedBone ) current).label().getNumber());
+                        Number =  Integer.parseInt(((FixedBone ) current).getLabel());
                     }
 
                     if (current instanceof  SimpleBone)
                     {
-                        Number =  Integer.parseInt(((SimpleBone ) current).label().getNumber());
+                        Number =  Integer.parseInt(((SimpleBone ) current).getLabel());
                     }
 
                     if (current instanceof  StickyBone)
                     {
-                        Number =  Integer.parseInt(((StickyBone ) current).label().getNumber());
+                        Number =  Integer.parseInt(((StickyBone ) current).getLabel());
                     }
 
                     if(start != Number )

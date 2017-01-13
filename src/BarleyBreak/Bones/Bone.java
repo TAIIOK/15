@@ -12,9 +12,18 @@ abstract  public class Bone {
 
     protected boolean CanBeMoved;
 
+    protected String Label;
+
     //Позиция
     private Point position;
-    
+
+    public void setLabel(String label){
+        this.Label = label;
+    }
+
+    public String getLabel(){
+        return this.Label;
+    }
     
     public void setPosition(Point pos) {
         this.position=pos;

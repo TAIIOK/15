@@ -9,24 +9,6 @@ public class FixedBone extends Bone {
         CanBeMoved = false;
     }
 
-    // --------------------- Метка, принадлежащая ячейке -----------------------
-    //Метка
-    private Label label;
-
-
-    public Label label() {
-        return label;
-    }
-
-    public boolean isEmpty()
-    {
-        return label == null;
-    }
-
-    public void setLabel(Label l) {
-        l.setBone(this);
-        this.label = l;
-    }
 
     public String GetImage()
     {
