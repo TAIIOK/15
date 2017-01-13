@@ -12,9 +12,6 @@ import BarleyBreak.Bones.*;
 public class GamePanel extends JFrame {
     
     private JPanel fieldPanel = new JPanel();
-    
-
-
     private JMenuBar menu = null;
     private final String fileItems[] = new String []{"New", "Exit"};
     
