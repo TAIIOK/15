@@ -1,15 +1,15 @@
-package Cells;
+package BarleyBreak.Bones;
 
 
 public class Label {
     
 
-    private Cell cell;
+    private Bone bone;
 
     private String number;
 
 
-    public String getNumber ()
+    public String getNumber()
     {
         return this.number;
     }
@@ -19,12 +19,12 @@ public class Label {
         this.number = number;
     }
 
-    public Cell cell(){
-        return cell;
+    public Bone bone(){
+        return bone;
     }
     
-    public void setCell(Cell c){
-        cell=c;
+    public void setBone(Bone b){
+        bone=b;
     }
 
 

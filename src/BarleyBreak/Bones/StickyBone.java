@@ -1,10 +1,10 @@
-package Cells;
+package BarleyBreak.Bones;
 
 
-public class StickyCell  extends Cell  {
+public class StickyBone  extends Bone  {
 
 
-    public StickyCell()
+    public StickyBone()
     {
         image = "img/left.png";
 
@@ -23,7 +23,7 @@ public class StickyCell  extends Cell  {
     }
 
     public void setLabel(Label l) {
-        l.setCell(this);
+        l.setBone(this);
         this.label = l;
     }
 

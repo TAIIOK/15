@@ -1,10 +1,10 @@
-package Cells;
+package BarleyBreak.Bones;
 
 import java.awt.Point;
 import javax.swing.*;
 import java.awt.*;
 
-abstract  public class Cell {
+abstract  public class Bone {
     
 
 

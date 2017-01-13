@@ -1,4 +1,4 @@
-package barley_break;
+package BarleyBreak;
 
 
 import java.awt.*;
@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import Cells.*;
+import BarleyBreak.Bones.*;
 
 public class GamePanel extends JFrame {
     
@@ -26,7 +26,7 @@ public class GamePanel extends JFrame {
     public GamePanel() {
         super();
 
-        this.setTitle("");
+        this.setTitle("Пятнашки");
 
         
         // Меню
@@ -72,14 +72,14 @@ public class GamePanel extends JFrame {
         
         fieldPanel.removeAll();
 
-        List<Cell> cells =  _model.field().getCells();
+        List<Bone> bones =  _model.field().getBones();
 
         for (int row = 1; row <= _model.field().height(); row++) 
         {
 
             for (int col = 1; col <= _model.field().width(); col++) 
             {
-                Cell temp = getCell(cells , col , row);
+                Bone temp = getBone(bones , col , row);
 
                 if(temp != null) {
 
@@ -88,24 +88,24 @@ public class GamePanel extends JFrame {
                         Image img = ImageIO.read(getClass().getResource(temp.GetImage()));
                         Image newimg = img.getScaledInstance(60, 55,  Image.SCALE_SMOOTH);
                         JButton button = new JButton();
-                        if(temp instanceof  EmptyCell) {
+                        if(temp instanceof  EmptyBone) {
                              button.setIcon(new ImageIcon(newimg));
                         }
                         else {
-                            if(temp instanceof  SimpleCell )   {
-                                button = new JButton(((SimpleCell) temp).label().getNumber(), new ImageIcon(newimg));
+                            if(temp instanceof  SimpleBone )   {
+                                button = new JButton(((SimpleBone) temp).label().getNumber(), new ImageIcon(newimg));
                             }
-                            if(temp instanceof  BrokenCell )   {
-                                button = new JButton(((BrokenCell) temp).label().getNumber(), new ImageIcon(newimg));
+                            if(temp instanceof  FixedBone )   {
+                                button = new JButton(((FixedBone) temp).label().getNumber(), new ImageIcon(newimg));
                             }
-                            if(temp instanceof  StickyCell )   {
-                                button = new JButton(((StickyCell) temp).label().getNumber(), new ImageIcon(newimg));
+                            if(temp instanceof  StickyBone )   {
+                                button = new JButton(((StickyBone) temp).label().getNumber(), new ImageIcon(newimg));
                             }
 
                         }
                         button.setFocusable(false);
 
-                        if (temp instanceof  BrokenCell ||  temp instanceof  EmptyCell)
+                        if (temp instanceof  FixedBone ||  temp instanceof  EmptyBone)
                         {
                             button.setEnabled(false);
                         }
@@ -127,9 +127,9 @@ public class GamePanel extends JFrame {
         fieldPanel.validate();
     }
 
-    public Cell getCell(List<Cell> cells , double x , double y)
+    public Bone getBone(List<Bone> bones , double x , double y)
     {
-        for (Cell item : cells) {
+        for (Bone item : bones) {
             if (item.position().getX() == x &&  item.position().getY() == y) {
                 return item;
             }
@@ -228,27 +228,27 @@ public class GamePanel extends JFrame {
 
             for (int col = 1; col <= _model.field().width(); col++) {
                 Point position = new Point(col,row);
-                Cell current = _model.field().cell(position);//.label().getNumber();
+                Bone current = _model.field().bone(position);//.label().getNumber();
                 int Number = -1;
-                if(current instanceof  EmptyCell)
+                if(current instanceof  EmptyBone)
                 {
                     if(col != 4 & row != 4)
                     return false;
                 }
                 else  {
-                    if (current instanceof  BrokenCell)
+                    if (current instanceof  FixedBone)
                     {
-                        Number =  Integer.parseInt(((BrokenCell ) current).label().getNumber());
+                        Number =  Integer.parseInt(((FixedBone ) current).label().getNumber());
                     }
 
-                    if (current instanceof  SimpleCell)
+                    if (current instanceof  SimpleBone)
                     {
-                        Number =  Integer.parseInt(((SimpleCell ) current).label().getNumber());
+                        Number =  Integer.parseInt(((SimpleBone ) current).label().getNumber());
                     }
 
-                    if (current instanceof  StickyCell)
+                    if (current instanceof  StickyBone)
                     {
-                        Number =  Integer.parseInt(((StickyCell ) current).label().getNumber());
+                        Number =  Integer.parseInt(((StickyBone ) current).label().getNumber());
                     }
 
                     if(start != Number )
@@ -268,21 +268,30 @@ public class GamePanel extends JFrame {
            
             JButton button = (JButton) e.getSource();
 
-
             Point p = buttonPosition(button);
-
 
             if(_model.field().move(p))
             {
                 repaintField();
                 if(determinateWin())
                 {
-                    JOptionPane.showMessageDialog(null, "Вы выиграли", "Победа!", JOptionPane.PLAIN_MESSAGE);
-                    setEnabledField(false);
+                    declareVictory();
                 }
+            }else
+            {
+                reportCanNotBeMoved();
             }
 
         }
+    }
+    
+    private void declareVictory(){
+        JOptionPane.showMessageDialog(null, "Вы выиграли", "Победа!", JOptionPane.PLAIN_MESSAGE);
+        setEnabledField(false);
+    }
+    
+    private void reportCanNotBeMoved(){
+        JOptionPane.showMessageDialog(null, "Кость не может быть перемещена!", "Упс!", JOptionPane.PLAIN_MESSAGE);
     }
     
 

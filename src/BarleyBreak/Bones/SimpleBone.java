@@ -1,9 +1,9 @@
-package Cells;
+package BarleyBreak.Bones;
 
 
-public class SimpleCell extends Cell {
+public class SimpleBone extends Bone {
 
-    public SimpleCell()
+    public SimpleBone()
     {
         image = "img/simple.png";
         CanBeMoved = true;
@@ -23,7 +23,7 @@ public class SimpleCell extends Cell {
     }
 
     public void setLabel(Label l) {
-        l.setCell(this);
+        l.setBone(this);
         this.label = l;
     }
 

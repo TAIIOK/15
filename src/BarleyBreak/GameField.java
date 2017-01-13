@@ -1,10 +1,10 @@
-package barley_break;
+package BarleyBreak;
 
 import java.util.List;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
-import Cells.*;
+import BarleyBreak.Bones.*;
 
 import javax.swing.*;
 
@@ -15,11 +15,11 @@ public class GameField {
     
 
 
-    //Список ячеек
-    private List<Cell> cellList = new ArrayList();
+    //Список костяшек
+    private List<Bone> BoneList = new ArrayList();
     
-    Cell cell(Point pos){
-        for (Cell item : this.cellList) {
+    Bone bone(Point pos){
+        for (Bone item : this.BoneList) {
             if (item.position().equals(pos)) {
                 return item;
             }
@@ -28,72 +28,72 @@ public class GameField {
         return null;
     }
     
-    void setCell(Point pos, Cell cell, String number){
-        cell.setPosition(pos);
+    void setBone(Point pos, Bone bone, String number){
+        bone.setPosition(pos);
 
         Label l = new Label();
-        l.setCell(cell);
+        l.setBone(bone);
         l.setNumber(number);
 
-        if(cell instanceof  EmptyCell){}
+        if(bone instanceof  EmptyBone){}
 
-        else if(cell instanceof  BrokenCell)
+        else if(bone instanceof  FixedBone)
         {
-            ((BrokenCell) cell).setLabel(l);
+            ((FixedBone) bone).setLabel(l);
         }
 
-        else if(cell instanceof  SimpleCell)
+        else if(bone instanceof  SimpleBone)
         {
-            ((SimpleCell) cell).setLabel(l);
+            ((SimpleBone) bone).setLabel(l);
         }
 
-        else if(cell instanceof  StickyCell)
+        else if(bone instanceof  StickyBone)
         {
-            ((StickyCell) cell).setLabel(l);
+            ((StickyBone) bone).setLabel(l);
         }
 
 
 
-        cellList.add(cell);
+        BoneList.add(bone);
 
     }
 
     public boolean move(Point p)
     {
-        Cell current = cell(p);
-        Cell emptyCell ;
-        for (Cell item : this.cellList) {
-            if (item instanceof EmptyCell) {
-                emptyCell = item;
+        Bone current = bone(p);
+        Bone emptyBone ;
+        for (Bone item : this.BoneList) {
+            if (item instanceof EmptyBone) {
+                emptyBone = item;
 
-                if(current instanceof StickyCell)
+                if(current instanceof StickyBone)
                 {
                     Point point = new Point();
                     point.x = (int)current.position().getX()-1;
                     point.y = (int)current.position().getY();
 
-                    Cell pair = cell(point);
+                    Bone pair = bone(point);
 
-                        if (pair instanceof SimpleCell) {
-                            ((StickyCell) current).setMoved(false);
+                        if (pair instanceof SimpleBone) {
+                            ((StickyBone) current).setMoved(false);
                             JOptionPane.showMessageDialog(null, "Костяшка прилипла и не может быть передвинута ! ", "Упс", JOptionPane.PLAIN_MESSAGE);
                             return false;
                         }
 
 
-                    ((StickyCell) current).setMoved(true);
+                    ((StickyBone) current).setMoved(true);
                 }
-        if(isLegalPlay(current.position().getX(),current.position().getY(),emptyCell.position().getX(),emptyCell.position().getY()))
+        if(canBeMoved(current.position().getX(),current.position().getY(),emptyBone.position().getX(),emptyBone.position().getY()))
         {
 
-            Point emptyPosition = emptyCell.position();
+            Point emptyPosition = emptyBone.position();
 
             double Y = current.position().getY();
             double X = current.position().getX();
 
             current.position().setLocation(emptyPosition);
-            emptyCell.position().x = (int)X;
-            emptyCell.position().y = (int)Y;
+            emptyBone.position().x = (int)X;
+            emptyBone.position().y = (int)Y;
             return true;
         }
         else
@@ -107,7 +107,7 @@ public class GameField {
     }
 
 
-    private boolean isLegalPlay(double x_1, double y_1 , double x_2, double y_2 )
+    private boolean canBeMoved(double x_1, double y_1 , double x_2, double y_2 )
     {
 
 
@@ -145,9 +145,9 @@ public class GameField {
         return false;
     }
 
-    public  List<Cell> getCells() {
+    public  List<Bone> getBones() {
 
-        return this.cellList;
+        return this.BoneList;
     }
 
     public void MixArray()
@@ -168,20 +168,20 @@ public class GameField {
                 Numbers.add(fistnumber);
                 Numbers.add(secondnumber);
 
-            Cell first = cellList.get(fistnumber);
+            Bone first = BoneList.get(fistnumber);
 
-            Cell second = cellList.get(secondnumber);
+            Bone second = BoneList.get(secondnumber);
 
-            if(first instanceof BrokenCell || second instanceof BrokenCell)
+            if(first instanceof FixedBone || second instanceof FixedBone)
                 continue;
 
-            Point firstCell = first.position();
+            Point firstBone = first.position();
 
             double Y = second.position().getY();
             double X = second.position().getX();
 
 
-            second.position().setLocation(firstCell);
+            second.position().setLocation(firstBone);
 
             first.position().x = (int)X;
             first.position().y = (int)Y;
@@ -193,12 +193,12 @@ public class GameField {
     }
 
     public void clear(){
-        cellList.clear();
+        BoneList.clear();
     }    
     
-    private void removeCell(Point pos){
+    private void removeBone(Point pos){
 
-        cellList.remove(cell(pos));
+        BoneList.remove(bone(pos));
     }
     
 
