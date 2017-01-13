@@ -202,13 +202,13 @@ public class GameField {
         List<Integer> Numbers  = new ArrayList();
 
 
-        for(int i = 0 ;Numbers.size()!=14;i++)
+        for(int i = 0 ;Numbers.size()!=12;i++)
         {
             int fistnumber;
             int secondnumber;
             do{
-                fistnumber = (int) (Math.random() * 16);
-                secondnumber = (int) (Math.random() * 16);
+                fistnumber = (int) (Math.random() * 15);
+                secondnumber = (int) (Math.random() * 15);
             }
             while(Numbers.contains(fistnumber) || Numbers.contains(secondnumber));
 
