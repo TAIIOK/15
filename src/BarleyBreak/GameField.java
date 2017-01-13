@@ -202,7 +202,7 @@ public class GameField {
         List<Integer> Numbers  = new ArrayList();
 
 
-        for(int i = 0 ;Numbers.size()!=12;i++)
+        for(int i = 0 ;Numbers.size()!=14;i++)
         {
             int fistnumber;
             int secondnumber;

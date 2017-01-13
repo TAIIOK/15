@@ -48,7 +48,10 @@ public class BasicBarleyBreakBoneFactory extends BoneFactory {
                     BoneList.add(newBone);
                 }
                 else{
-
+                    EmptyBone newBone = new EmptyBone(field);
+                    newBone.setPosition(new BonePosition(row,col));
+                    newBone.setLabel(String.valueOf(count));
+                    BoneList.add(newBone);
                 }
                 count++;
             }
