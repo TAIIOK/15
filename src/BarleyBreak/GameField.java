@@ -34,7 +34,7 @@ public class GameField {
     
     void setBone(int col , int row, Bone bone, String number){
 
-        bone.setPosition(new BonePosition(col,row));
+        bone.setPosition(new BonePosition(row,col));
 
 
         if(bone instanceof  EmptyBone){}
@@ -88,11 +88,11 @@ public class GameField {
 
             BonePosition emptyPosition = emptyBone.position();
 
-            int Y = current.position().column();
-            int X = current.position().row();
+            int Y = current.position().row();
+            int X = current.position().column();
 
             current.setPosition(emptyPosition);
-            emptyBone.setPosition(new BonePosition(X,Y));
+            emptyBone.setPosition(new BonePosition(Y,X));
 
             return true;
         }
@@ -177,8 +177,8 @@ public class GameField {
 
             BonePosition firstBone = first.position();
 
-            int Y = second.position().column();
-            int X = second.position().row();
+            int Y = second.position().row();
+            int X = second.position().column();
 
 
             second.setPosition(firstBone);
