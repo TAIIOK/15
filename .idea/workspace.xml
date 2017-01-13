@@ -41,21 +41,65 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BoneRange.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/BoneRange.java">
+      <file leaf-file-name="SimpleBoneFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/SimpleBoneFactory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
-              <folding />
+            <state relative-caret-position="105">
+              <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#289#290#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StickyBoneFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/StickyBoneFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#289#290#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FixedBoneFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/FixedBoneFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
+                <element signature="e#293#294#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BoneFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/BoneFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameModel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/BarleyBreak/GameModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="512">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="200">
+              <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#2360#2361#0" expanded="true" />
@@ -124,53 +168,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FieldObject.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/FieldObject.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Direction.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Direction.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-622">
-              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-              <folding>
-                <element signature="e#801#802#0" expanded="true" />
-                <element signature="e#850#851#0" expanded="true" />
-                <element signature="e#886#887#0" expanded="true" />
-                <element signature="e#938#939#0" expanded="true" />
-                <element signature="e#978#979#0" expanded="true" />
-                <element signature="e#1030#1031#0" expanded="true" />
-                <element signature="e#1065#1066#0" expanded="true" />
-                <element signature="e#1118#1119#0" expanded="true" />
-                <element signature="e#1155#1156#0" expanded="true" />
-                <element signature="e#1189#1190#0" expanded="true" />
-                <element signature="e#1225#1226#0" expanded="true" />
-                <element signature="e#1263#1264#0" expanded="true" />
-                <element signature="e#1732#1733#0" expanded="true" />
-                <element signature="e#1766#1767#0" expanded="true" />
-                <element signature="e#1816#1817#0" expanded="true" />
-                <element signature="e#1868#1869#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FixedBone.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Bones/FixedBone.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -231,6 +228,12 @@
         <option value="$PROJECT_DIR$/src/BarleyBreak/BonePosition.java" />
         <option value="$PROJECT_DIR$/src/BarleyBreak/GamePanel.java" />
         <option value="$PROJECT_DIR$/src/BarleyBreak/GameField.java" />
+        <option value="$PROJECT_DIR$/src/BarleyBreak/Factory.java" />
+        <option value="$PROJECT_DIR$/src/BarleyBreak/Factory/BoneFactory.java" />
+        <option value="$PROJECT_DIR$/src/BarleyBreak/Factory/FixedBoneFactory.java" />
+        <option value="$PROJECT_DIR$/src/BarleyBreak/Factory/simpleBoneFactory.java" />
+        <option value="$PROJECT_DIR$/src/BarleyBreak/Factory/SimpleBoneFactory.java" />
+        <option value="$PROJECT_DIR$/src/BarleyBreak/Factory/StickyBoneFactory.java" />
       </list>
     </option>
   </component>
@@ -318,6 +321,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="BarleyBreak" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BarleyBreak" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BarleyBreak" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="BarleyBreak" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Factory" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -813,12 +838,12 @@
       <updated>1483987632894</updated>
       <workItem from="1483987634101" duration="7074000" />
       <workItem from="1484041494378" duration="25782000" />
-      <workItem from="1484307340698" duration="7953000" />
+      <workItem from="1484307340698" duration="8822000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40809000" />
+    <option name="totallyTimeSpent" value="41678000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -873,12 +898,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/barley_break/GameField.java" />
-    <entry file="file://$PROJECT_DIR$/src/barley_break/GameModel.java" />
-    <entry file="file://$PROJECT_DIR$/src/barley_break/Label.java" />
-    <entry file="file://$PROJECT_DIR$/src/barley_break/Shift.java" />
-    <entry file="file://$PROJECT_DIR$/src/barley_break/GamePanel.java" />
-    <entry file="file://$PROJECT_DIR$/src/barley_break/LabelFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/barley_break/Direction.java" />
     <entry file="file://$PROJECT_DIR$/src/barley_break/CellFactory.java" />
     <entry file="file://$PROJECT_DIR$/src/barley_break/Cell.java" />
@@ -1012,18 +1031,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Bones/Bone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#334#335#0" expanded="true" />
-            <element signature="e#368#369#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/BarleyBreak/GameField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -1056,12 +1063,86 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BarleyBreak/GameModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="200">
+          <caret line="30" column="30" selection-start-line="30" selection-start-column="30" selection-end-line="30" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#2360#2361#0" expanded="true" />
             <element signature="e#2431#2432#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Bones/Bone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#334#335#0" expanded="true" />
+            <element signature="e#368#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/impleBoneFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/BoneFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/FixedBoneFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="42" selection-start-line="5" selection-start-column="42" selection-end-line="5" selection-end-column="42" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#293#294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/SimpleBoneFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="31" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/BarleyBreak/Factory/StickyBoneFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#245#246#0" expanded="true" />
+            <element signature="e#289#290#0" expanded="true" />
           </folding>
         </state>
       </provider>
