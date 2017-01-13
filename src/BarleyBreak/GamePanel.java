@@ -218,46 +218,6 @@ public class GamePanel extends JFrame {
     
 // ------------------------- Реагируем на действия игрока ----------------------
 
-    private boolean determinateWin()
-    {
-        int start = 1;
-        for (int row = 1; row <= _model.field().height(); row++) {
-
-            for (int col = 1; col <= _model.field().width(); col++) {
-                BonePosition position = new BonePosition(row,col);
-                Bone current = _model.field().bone(position);//.label().getNumber();
-                int Number = -1;
-                if(current instanceof  EmptyBone)
-                {
-                    if(col != 4 & row != 4)
-                    return false;
-                }
-                else  {
-                    if (current instanceof  FixedBone)
-                    {
-                        Number =  Integer.parseInt(((FixedBone ) current).getLabel());
-                    }
-
-                    if (current instanceof  SimpleBone)
-                    {
-                        Number =  Integer.parseInt(((SimpleBone ) current).getLabel());
-                    }
-
-                    if (current instanceof  StickyBone)
-                    {
-                        Number =  Integer.parseInt(((StickyBone ) current).getLabel());
-                    }
-
-                    if(start != Number )
-                    return false;
-                }
-                start++;
-
-            }
-        }
-
-        return true;
-    }
 
     private class ClickListener implements ActionListener {
         @Override
@@ -270,7 +230,7 @@ public class GamePanel extends JFrame {
             if(_model.field().move(p))
             {
                 repaintField();
-                if(determinateWin())
+                if(_model.field().determinateWin())
                 {
                     declareVictory();
                 }

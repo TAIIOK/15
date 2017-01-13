@@ -106,6 +106,47 @@ public class GameField {
 
     }
 
+    public boolean determinateWin()
+    {
+        int start = 1;
+        for (int row = 1; row <= height(); row++) {
+
+            for (int col = 1; col <= width(); col++) {
+                BonePosition position = new BonePosition(row,col);
+                Bone current = bone(position);//.label().getNumber();
+                int Number = -1;
+                if(current instanceof  EmptyBone)
+                {
+                    if(col != 4 & row != 4)
+                        return false;
+                }
+                else  {
+                    if (current instanceof  FixedBone)
+                    {
+                        Number =  Integer.parseInt(((FixedBone ) current).getLabel());
+                    }
+
+                    if (current instanceof  SimpleBone)
+                    {
+                        Number =  Integer.parseInt(((SimpleBone ) current).getLabel());
+                    }
+
+                    if (current instanceof  StickyBone)
+                    {
+                        Number =  Integer.parseInt(((StickyBone ) current).getLabel());
+                    }
+
+                    if(start != Number )
+                        return false;
+                }
+                start++;
+
+            }
+        }
+
+        return true;
+    }
+
 
     private boolean canBeMoved(double x_1, double y_1 , double x_2, double y_2 )
     {
