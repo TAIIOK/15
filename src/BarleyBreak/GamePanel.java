@@ -7,17 +7,18 @@ import java.awt.event.ActionListener;
 import java.util.List;
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
 import BarleyBreak.Bones.*;
 
 public class GamePanel extends JFrame {
-    
+
     private JPanel fieldPanel = new JPanel();
     private JMenuBar menu = null;
-    private final String fileItems[] = new String []{"New", "Exit"};
-    
+    private final String fileItems[] = new String[]{"New", "Exit"};
+
     private final int CELL_SIZE = 50;
     private final int TITLE_HEIGHT = 40;
-    
+
     private GameModel _model = new GameModel();
 
     public GamePanel() {
@@ -25,7 +26,7 @@ public class GamePanel extends JFrame {
 
         this.setTitle("Пятнашки");
 
-        
+
         // Меню
         createMenu();
         setJMenuBar(menu);
@@ -42,68 +43,64 @@ public class GamePanel extends JFrame {
         createField();
         setEnabledField(false);
         mainBox.add(fieldPanel);
-        
+
         setContentPane(mainBox);
         pack();
         setResizable(false);
     }
-    
+
 
 // --------------------------- Отрисовываем поле ------------------------------    
-    
-    private void createField(){
-        
+
+    private void createField() {
+
         fieldPanel.setDoubleBuffered(true);
         fieldPanel.setLayout(new GridLayout(_model.field().height(), _model.field().width()));
-        
-        Dimension fieldDimension = new Dimension(CELL_SIZE*_model.field().height(), CELL_SIZE*_model.field().width());
-        
+
+        Dimension fieldDimension = new Dimension(CELL_SIZE * _model.field().height(), CELL_SIZE * _model.field().width());
+
         fieldPanel.setPreferredSize(fieldDimension);
         fieldPanel.setMinimumSize(fieldDimension);
         fieldPanel.setMaximumSize(fieldDimension);
 
         repaintField();
     }
-    
+
     public void repaintField() {
-        
+
         fieldPanel.removeAll();
 
-        List<Bone> bones =  _model.field().getBones();
+        List<Bone> bones = _model.field().getBones();
 
-        for (int row = 1; row <= _model.field().height(); row++) 
-        {
+        for (int row = 1; row <= _model.field().height(); row++) {
 
-            for (int col = 1; col <= _model.field().width(); col++) 
-            {
-                Bone temp = getBone(bones , col , row);
+            for (int col = 1; col <= _model.field().width(); col++) {
+                Bone temp = getBone(bones, col, row);
 
-                if(temp != null) {
+                if (temp != null) {
 
                     try {
 
                         Image img = ImageIO.read(getClass().getResource(temp.GetImage()));
-                        Image newimg = img.getScaledInstance(60, 55,  Image.SCALE_SMOOTH);
+                        Image newimg = img.getScaledInstance(60, 55, Image.SCALE_SMOOTH);
                         JButton button = new JButton();
-                        if(temp instanceof  EmptyBone) {
-                             button.setIcon(new ImageIcon(newimg));
-                        }
-                        else {
-                            if(temp instanceof  SimpleBone )   {
+                        if (temp instanceof EmptyBone) {
+                            button.setIcon(new ImageIcon(newimg));
+                        } else {
+                            if (temp instanceof SimpleBone) {
                                 button = new JButton(((SimpleBone) temp).getLabel(), new ImageIcon(newimg));
                             }
-                            if(temp instanceof  FixedBone )   {
+                            if (temp instanceof FixedBone) {
                                 button = new JButton(((FixedBone) temp).getLabel(), new ImageIcon(newimg));
                             }
-                            if(temp instanceof  StickyBone )   {
+                            if (temp instanceof StickyBone) {
                                 button = new JButton(((StickyBone) temp).getLabel(), new ImageIcon(newimg));
                             }
 
                         }
                         button.setFocusable(false);
 
-                        if (temp instanceof  FixedBone ||  temp instanceof  EmptyBone)
-                        {
+                        if (temp instanceof FixedBone || temp instanceof EmptyBone) {
                             button.setEnabled(false);
                         }
 
@@ -124,72 +121,66 @@ public class GamePanel extends JFrame {
         fieldPanel.validate();
     }
 
-    public Bone getBone(List<Bone> bones , double x , double y)
-    {
+    public Bone getBone(List<Bone> bones, double x, double y) {
         for (Bone item : bones) {
-            if (item.position().row() == x &&  item.position().column() == y) {
+            if (item.position().row() == x && item.position().column() == y) {
                 return item;
             }
         }
-        return  null;
+        return null;
     }
-    private BonePosition buttonPosition(JButton btn){
-        
+
+    private BonePosition buttonPosition(JButton btn) {
+
         int index = 0;
-        for(Component widget: fieldPanel.getComponents())
-        {
-            if(widget instanceof JButton)
-            {
-                if(btn.equals((JButton)widget))
-                {
+        for (Component widget : fieldPanel.getComponents()) {
+            if (widget instanceof JButton) {
+                if (btn.equals((JButton) widget)) {
                     break;
                 }
-                
+
                 index++;
             }
-         }
-        
-        int fieldWidth = _model.field().width();
-        return new BonePosition(index%fieldWidth + 1, index/fieldWidth + 1);
-    }
-        
-   private JButton getButton(Point pos) {
+        }
 
-       int index = _model.field().width()*(pos.y-1) + (pos.x-1);
-       
-        for(Component widget: fieldPanel.getComponents())
-        {
-            if(widget instanceof JButton)
-            {
-                if(index == 0)
-                {
-                    return (JButton)widget;
+        int fieldWidth = _model.field().width();
+        return new BonePosition(index % fieldWidth + 1, index / fieldWidth + 1);
+    }
+
+    private JButton getButton(Point pos) {
+
+        int index = _model.field().width() * (pos.y - 1) + (pos.x - 1);
+
+        for (Component widget : fieldPanel.getComponents()) {
+            if (widget instanceof JButton) {
+                if (index == 0) {
+                    return (JButton) widget;
                 }
                 index--;
             }
-         }
-        
+        }
+
         return null;
     }
 
 
-    
-    private void setEnabledField(boolean on){
+    private void setEnabledField(boolean on) {
 
         Component comp[] = fieldPanel.getComponents();
-        for(Component c : comp)
-        {    c.setEnabled(on);   }
+        for (Component c : comp) {
+            c.setEnabled(on);
+        }
     }
-    
+
 // ----------------------------- Создаем меню ----------------------------------  
-    
+
     private void createMenu() {
- 
+
         menu = new JMenuBar();
         JMenu fileMenu = new JMenu("File");
 
         for (int i = 0; i < fileItems.length; i++) {
-           
+
             JMenuItem item = new JMenuItem(fileItems[i]);
             item.setActionCommand(fileItems[i].toLowerCase());
             item.addActionListener(new NewMenuListener());
@@ -212,44 +203,41 @@ public class GamePanel extends JFrame {
                 _model.shuffleField();
                 createField();
 
-            }  
+            }
         }
     }
-    
+
 // ------------------------- Реагируем на действия игрока ----------------------
 
 
     private class ClickListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-           
+
             JButton button = (JButton) e.getSource();
 
             BonePosition p = buttonPosition(button);
 
-            if(_model.field().move(p))
-            {
+            if (_model.field().move(p)) {
                 repaintField();
-                if(_model.field().determinateWin())
-                {
+                if (_model.field().determinateWin()) {
                     declareVictory();
                 }
-            }else
-            {
+            } else {
                 reportCanNotBeMoved();
             }
 
         }
     }
-    
-    private void declareVictory(){
+
+    private void declareVictory() {
         JOptionPane.showMessageDialog(null, "Вы выиграли", "Победа!", JOptionPane.PLAIN_MESSAGE);
         setEnabledField(false);
     }
-    
-    private void reportCanNotBeMoved(){
+
+    private void reportCanNotBeMoved() {
         JOptionPane.showMessageDialog(null, "Кость не может быть перемещена!", "Упс!", JOptionPane.PLAIN_MESSAGE);
     }
-    
+
 
 }

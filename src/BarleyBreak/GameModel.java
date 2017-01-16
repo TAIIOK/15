@@ -1,7 +1,6 @@
 package BarleyBreak;
 
-import java.awt.Point;
-import java.util.ArrayList;
+
 import java.util.List;
 
 import BarleyBreak.Bones.*;
@@ -33,7 +32,7 @@ public class GameModel {
 
         field().setSize(4, 4);
 
-        List<Bone> BoneList =  _BasicBarleyBreakBoneFactory.createBones(field());
+        List<Bone> BoneList = _BasicBarleyBreakBoneFactory.createBones(field());
 
         field().setBones(BoneList);
 
@@ -43,9 +42,7 @@ public class GameModel {
     private BasicBarleyBreakBoneFactory _BasicBarleyBreakBoneFactory = new BasicBarleyBreakBoneFactory();
 
 
-    
-    public void shuffleField()
-    {
+    public void shuffleField() {
         field().MixArray();
     }
 

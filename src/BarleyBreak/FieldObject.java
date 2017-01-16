@@ -1,8 +1,6 @@
 package BarleyBreak;
 
 
-
-
 public abstract class FieldObject<Position> {
 
     // -------------------------------------------------------------------------
@@ -25,7 +23,6 @@ public abstract class FieldObject<Position> {
     }
 
     public abstract void setPosition(Position position);
-
 
 
 }

@@ -1,11 +1,11 @@
 package BarleyBreak.Bones;
 
 import BarleyBreak.*;
-import java.awt.*;
 
-abstract  public class Bone extends FieldObject<BonePosition>  {
 
-    public Bone(GameField field){
+abstract public class Bone extends FieldObject<BonePosition> {
+
+    public Bone(GameField field) {
 
         super(field);
     }
@@ -18,12 +18,11 @@ abstract  public class Bone extends FieldObject<BonePosition>  {
     protected String Label;
 
 
-
-    public void setLabel(String label){
+    public void setLabel(String label) {
         this.Label = label;
     }
 
-    public String getLabel(){
+    public String getLabel() {
         return this.Label;
 
     }
@@ -36,11 +35,9 @@ abstract  public class Bone extends FieldObject<BonePosition>  {
         }
 
     }
-    
 
 
-    public String GetImage()
-    {
+    public String GetImage() {
         return this.image;
     }
 
